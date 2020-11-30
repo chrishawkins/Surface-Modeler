@@ -1,10 +1,11 @@
 #pragma once
 
 #include <cmath>
+#include <cstdlib>
 
 #include "MathUtils.h"
 
-namespace SurfaceModeler {
+namespace MathUtils {
 
 	class Vector
 	{
@@ -27,6 +28,10 @@ namespace SurfaceModeler {
 
 		Vector normalize() const {
 			return operator/(length());
+		}
+
+		Vector abs() const {
+			return Vector(std::abs(x), std::abs(y), std::abs(z));
 		}
 
 		float dot(const Vector& b) const {

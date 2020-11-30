@@ -4,7 +4,7 @@
 
 #include "../Surface Modeler/Vector.h"
 
-using namespace SurfaceModeler;
+using namespace MathUtils;
 using namespace std;
 
 namespace Microsoft {

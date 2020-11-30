@@ -2,6 +2,8 @@
 
 #include "Vector.h"
 
+using namespace MathUtils;
+
 namespace SurfaceModeler {
 
 	class Surface

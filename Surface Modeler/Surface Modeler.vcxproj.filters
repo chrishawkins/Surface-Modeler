@@ -48,6 +48,9 @@
     <ClInclude Include="BoxSurface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="VectorMathUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Surface Modeler.rc">
@@ -76,9 +79,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ThreadedRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MathUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BoxSurface.cpp">

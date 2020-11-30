@@ -5,8 +5,8 @@
 #include "../Surface Modeler/Vector.h"
 #include "../Surface Modeler/Vector.cpp"
 
-using namespace SurfaceModeler;
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+using namespace MathUtils;
 
 namespace Tests
 {

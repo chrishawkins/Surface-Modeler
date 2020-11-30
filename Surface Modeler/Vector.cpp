@@ -1,6 +1,6 @@
 #include "Vector.h"
 
-using namespace SurfaceModeler;
+using namespace MathUtils;
 
 const Vector Vector::ZERO = Vector(0.0f, 0.0f, 0.0f);
 const Vector Vector::UNIT = Vector(1.0f, 1.0f, 1.0f);
