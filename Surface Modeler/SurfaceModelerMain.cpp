@@ -9,6 +9,9 @@
 #include "SurfaceModelerMain.h"
 #include "ThreadedRenderer.h"
 #include "BoxSurface.h"
+#include "Scene.h"
+#include "SampleScenes.h"
+#include "SceneReader.h"
 
 using namespace SurfaceModeler;
 
@@ -26,7 +29,6 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
 HBITMAP hbitmap = NULL;
 
 std::unique_ptr<ThreadedRenderer> renderer = nullptr;
-std::shared_ptr<Surface> surface = nullptr;
 std::unique_ptr<BYTE[]> buffer = std::unique_ptr<BYTE[]>(new BYTE[WIDTH * HEIGHT * 3]);
 
 // Forward declarations of functions included in this code module:
@@ -121,8 +123,9 @@ void initializeRenderer() {
         PostMessage(hWnd, WM_USER_RENDER_COMPLETE, NULL, NULL);
     };
 
-    surface = std::shared_ptr<BoxSurface>(new BoxSurface(Vector(0.5f, 0.2f, 0.5f), 0.05f));
-    renderer = std::unique_ptr<ThreadedRenderer>(new ThreadedRenderer(WIDTH, HEIGHT, surface, onRender));
+    SceneReader reader;
+    auto surfaces = reader.surfacesForScene(SampleScenes::roundedCube());
+    renderer = std::unique_ptr<ThreadedRenderer>(new ThreadedRenderer(WIDTH, HEIGHT, surfaces[0], onRender));
 
     for (int i = 0; i < renderer->getWidth() * renderer->getHeight() * 3; i++) {
         buffer[i] = 0;

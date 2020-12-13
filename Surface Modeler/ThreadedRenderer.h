@@ -11,7 +11,7 @@ namespace SurfaceModeler {
 	class ThreadedRenderer
 	{
 	public:
-		ThreadedRenderer(int width, int height, std::shared_ptr<Surface> surface, std::function<void()> onRender) :
+		ThreadedRenderer(int width, int height, std::shared_ptr<const Surface> surface, std::function<void()> onRender) :
 			rendererThread(nullptr), onRender(onRender), _isRendering(false), _initializing(true), _exiting(false) {
 			renderer = std::unique_ptr<Renderer>(new Renderer(width, height));
 			renderer->surface = surface;

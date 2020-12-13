@@ -141,9 +141,14 @@
   <ItemGroup>
     <ClInclude Include="BoxSurface.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="SampleScenes.h" />
     <ClInclude Include="MathUtils.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneOperation.h" />
+    <ClInclude Include="SceneOperationParamLayout.h" />
+    <ClInclude Include="SceneReader.h" />
     <ClInclude Include="SphereSurface.h" />
     <ClInclude Include="Surface.h" />
     <ClInclude Include="SurfaceModelerMain.h" />
@@ -155,6 +160,9 @@
   <ItemGroup>
     <ClCompile Include="BoxSurface.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneOperation.cpp" />
+    <ClCompile Include="SceneReader.cpp" />
     <ClCompile Include="SphereSurface.cpp" />
     <ClCompile Include="SurfaceModelerMain.cpp" />
     <ClCompile Include="ThreadedRenderer.cpp" />

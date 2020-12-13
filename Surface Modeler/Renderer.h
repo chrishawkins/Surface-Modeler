@@ -14,7 +14,7 @@ namespace SurfaceModeler {
 	public:
 		int width, height;
 		Vector cameraPosition;
-		std::shared_ptr<Surface> surface;
+		std::shared_ptr<const Surface> surface;
 
 		Renderer(int width, int height, const Vector& cameraPosition = Vector(0, 0, -10)) :
 			width(width), height(height), cameraPosition(cameraPosition)
@@ -42,6 +42,7 @@ namespace SurfaceModeler {
 
 		// Lighting Functions
 		Vector estimateNormal(const Vector& point) const;
+
 		Vector phongContrib(
 			const Color& diffuse,
 			const Color& specular,
