@@ -1,5 +1,13 @@
 # Software Renderer for SDF for Windows
 
+## Building and Running
+
+This project is now built with Buck2, and can be run as follows.
+
+```
+buck2 run //:SurfaceModeler
+```
+
 ## Features
 
 * multithreaded renderer
