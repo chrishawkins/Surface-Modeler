@@ -2,8 +2,8 @@
 #include "CppUnitTest.h"
 #include "TestLogging.h"
 
-#include "../Surface Modeler/Vector.h"
-#include "../Surface Modeler/Vector.cpp"
+#include "../SurfaceModeler/Vector.h"
+#include "../SurfaceModeler/Vector.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace MathUtils;
