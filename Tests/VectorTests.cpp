@@ -1,11 +1,11 @@
-#include <third-party/gtest/gtest.h>
+#include <gtest/gtest.h>
 
 #include "../SurfaceModeler/Vector.h"
 #include "../SurfaceModeler/Vector.cpp"
 
 using namespace MathUtils;
 
-TEST("VectorMath", "TestArithmetic") {
+TEST(VectorMath, testArithmetic) {
   auto a = Vector(1, 2, 3);
 	auto b = Vector(3, 2, 3);
 
@@ -32,3 +32,8 @@ TEST("VectorMath", "TestArithmetic") {
 // 		}
 // 	};
 // }
+
+int main(int argc, char **argv) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}

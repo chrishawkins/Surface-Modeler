@@ -27,6 +27,7 @@ cxx_binary(
 
 cxx_test(
   name='test',
+  compiler_flags=["-std=c++14"],
   deps=[
     "//third-party:gtest"
   ],
