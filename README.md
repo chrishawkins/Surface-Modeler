@@ -23,5 +23,7 @@ Note, most tutorials are for GLSL implementations, so the main work here was und
 
 ## TODO
 
+1. Get Buck to run tests
+1. Create MacOS build
 1. Support for transforms and camera positions
-2. Support for pushing scene geometry to an OpenGL fragment shader for realtime rendering
+1. Support for pushing scene geometry to an OpenGL fragment shader for realtime rendering
