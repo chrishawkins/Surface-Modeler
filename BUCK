@@ -22,4 +22,15 @@ cxx_binary(
         'odbc32.lib',
         'odbccp32.lib',
     ],
+    tests=[":test"]
+)
+
+cxx_test(
+  name='test',
+  deps=[
+    "//third-party:gtest"
+  ],
+  srcs=[
+    'Tests/VectorTests.cpp',
+  ],
 )

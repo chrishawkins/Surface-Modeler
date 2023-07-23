@@ -1,0 +1,29 @@
+
+cxx_library(
+    name='gtest',
+    srcs=glob(
+        include=[
+            "gtest/googletest/src/*.cc",
+            "gtest/googlemock/src/*.cc",
+        ],
+        exclude=[
+            "gtest/googletest/src/gtest-all.cc",
+            "gtest/googletest/src/gtest_main.cc",
+            "gtest/googlemock/src/gmock-all.cc",
+            "gtest/googlemock/src/gmock_main.cc",
+        ],
+    ),
+    headers=glob([
+        "gtest/googletest/include/gtest/*.h",
+        "gtest/googlemock/include/gmock/*.h",
+    ]),
+    include_directories=[
+        "gtest/googletest/include",
+        "gtest/googletest",
+        "gtest/googlemock/include",
+        "gtest/googlemock",
+    ],
+    visibility=[
+        '//:test',
+    ],
+)
