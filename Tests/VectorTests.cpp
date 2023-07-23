@@ -15,23 +15,21 @@ TEST(VectorMath, testArithmetic) {
 	ASSERT_EQ(Vector(0.5f, 1, 1.5f), a / 2.0f);
 }
 
-// 		TEST_METHOD(TestVectorDotProduct)
-// 		{
-// 			auto a = Vector(4, 8, 10);
-// 			auto b = Vector(9, 2, 7);
+TEST(VectorMath, testDotProduct)
+{
+	auto a = Vector(4, 8, 10);
+	auto b = Vector(9, 2, 7);
 
-// 			Assert::AreEqual(a * b, 122.0f);
-// 		}
+	ASSERT_EQ(a * b, 122.0f);
+}
 
-// 		TEST_METHOD(TestVectorReflection)
-// 		{
-// 			auto incident = Vector(-3, -3, 0);
-// 			auto normal = Vector(0, 1, 0);
+TEST(VectorMath, testReflect)
+{
+	auto incident = Vector(-3, -3, 0);
+	auto normal = Vector(0, 1, 0);
 
-// 			Assert::AreEqual(Vector(-3, 3, 0), Vector::reflect(incident, normal));
-// 		}
-// 	};
-// }
+	ASSERT_EQ(Vector(-3, 3, 0), Vector::reflect(incident, normal));
+}
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
