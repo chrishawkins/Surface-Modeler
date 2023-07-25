@@ -1,13 +1,27 @@
+load("//glob_defs.bzl", "subdir_glob")
 
-cxx_binary(
-    name="SurfaceModeler",
-    headers=glob([
-        'SurfaceModeler/**/*.h',
+cxx_library(
+    name="SurfaceModelerCore",
+    compiler_flags=["-std=c++20"],
+    header_namespace="SurfaceModeler",
+    exported_headers=subdir_glob([
+        ('core', '**/*.h'),
     ]),
     srcs=glob([
-        'SurfaceModeler/**/*.cpp',
+        'core/**/*.cpp',
     ]),
     link_style="static",
+    tests=[":test"]
+)
+
+cxx_binary(
+    name="SurfaceModelerWindows",
+    headers=glob([
+        'windows/**/*.h',
+    ]),
+    srcs=glob([
+        'windows/**/*.cpp',
+    ]),
     linker_flags=[
         'kernel32.lib',
         'user32.lib',
@@ -22,16 +36,17 @@ cxx_binary(
         'odbc32.lib',
         'odbccp32.lib',
     ],
-    tests=[":test"]
+    link_style="static",
 )
 
 cxx_test(
-  name='test',
-  compiler_flags=["-std=c++14"],
-  deps=[
-    "//third-party:gtest"
-  ],
-  srcs=[
-    'Tests/VectorTests.cpp',
-  ],
+    name='test',
+    compiler_flags=["-std=c++20"],
+    deps=[
+        "//third-party:gtest",
+        ":SurfaceModelerCore",
+    ],
+    srcs=[
+        'tests/VectorTests.cpp',
+    ],
 )

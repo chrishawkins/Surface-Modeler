@@ -1,6 +1,9 @@
 #pragma once
 
 #include <exception>
+#include <memory>
+
+using std::shared_ptr;
 
 namespace SurfaceModeler {
 
@@ -19,7 +22,7 @@ namespace SurfaceModeler {
 
 	struct SceneOperationParamLayout {
 		char numParams;
-		std::shared_ptr<SceneOperationParamType[]> layout;
+		shared_ptr<SceneOperationParamType[]> layout;
 
 		SceneOperationParamLayout(char numParams, SceneOperationParamType* layout) : numParams(numParams), layout(layout) {}
 
@@ -49,5 +52,4 @@ namespace SurfaceModeler {
 		static SceneOperationParamLayout boxLayout = SceneOperationParamLayout(2, new SceneOperationParamType[]{ SceneOperationParamType::VECTOR, SceneOperationParamType::FLOAT });
 		static SceneOperationParamLayout sphereLayout = SceneOperationParamLayout(1, new SceneOperationParamType[]{ SceneOperationParamType::FLOAT });
 	}
-
 }

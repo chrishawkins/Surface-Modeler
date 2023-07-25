@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../SurfaceModeler/Vector.h"
-#include "../SurfaceModeler/Vector.cpp"
+#include <SurfaceModeler/Vector.h>
 
 using namespace MathUtils;
 

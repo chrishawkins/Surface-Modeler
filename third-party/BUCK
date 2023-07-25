@@ -1,3 +1,4 @@
+load("//glob_defs.bzl", "subdir_glob")
 
 cxx_library(
     name='gtest',
@@ -17,31 +18,10 @@ cxx_library(
         "gtest/googletest/include/gtest/*.h",
         "gtest/googlemock/include/gmock/*.h",
     ]),
-    header_namespace="gtest",
-    # note: this is handled far more elegantly by subdir_glob but that doesn't seem to be included in buck2
-    exported_headers={
-        "gtest.h": "gtest/googletest/include/gtest/gtest.h",
-        "gtest-assertion-result.h": "gtest/googletest/include/gtest/gtest-assertion-result.h",
-        "gtest-message.h": "gtest/googletest/include/gtest/gtest-message.h",
-        "internal/gtest-port.h": "gtest/googletest/include/gtest/internal/gtest-port.h",
-        "internal/gtest-port-arch.h": "gtest/googletest/include/gtest/internal/gtest-port-arch.h",
-        "internal/custom/gtest-port.h": "gtest/googletest/include/gtest/internal/custom/gtest-port.h",
-        "gtest-death-test.h": "gtest/googletest/include/gtest/gtest-death-test.h",
-        "internal/gtest-death-test-internal.h": "gtest/googletest/include/gtest/internal/gtest-death-test-internal.h",
-        "gtest-matchers.h": "gtest/googletest/include/gtest/gtest-matchers.h",
-        "gtest-printers.h": "gtest/googletest/include/gtest/gtest-printers.h",
-        "internal/custom/gtest-printers.h": "gtest/googletest/include/gtest/internal/custom/gtest-printers.h",
-        "internal/gtest-internal.h": "gtest/googletest/include/gtest/internal/gtest-internal.h",
-        "internal/gtest-filepath.h": "gtest/googletest/include/gtest/internal/gtest-filepath.h",
-        "internal/gtest-string.h": "gtest/googletest/include/gtest/internal/gtest-string.h",
-        "internal/gtest-type-util.h": "gtest/googletest/include/gtest/internal/gtest-type-util.h",
-        "gtest-param-test.h": "gtest/googletest/include/gtest/gtest-param-test.h",
-        "internal/gtest-param-util.h": "gtest/googletest/include/gtest/internal/gtest-param-util.h",
-        "gtest-test-part.h": "gtest/googletest/include/gtest/gtest-test-part.h",
-        "gtest-typed-test.h": "gtest/googletest/include/gtest/gtest-typed-test.h",
-        "gtest_pred_impl.h": "gtest/googletest/include/gtest/gtest_pred_impl.h",
-        "gtest_prod.h": "gtest/googletest/include/gtest/gtest_prod.h",
-    },
+    header_namespace='',
+    exported_headers=subdir_glob([
+        ('gtest/googletest/include', 'gtest/**/*.h')
+    ]),
     include_directories=[
         "gtest/googletest/include",
         "gtest/googletest",
