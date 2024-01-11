@@ -5,7 +5,7 @@
 This project is now built with Buck2, and can be run as follows.
 
 ```
-buck2 run //:SurfaceModeler
+buck2 run //:SurfaceModelerWindows
 ```
 
 ## Features

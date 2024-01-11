@@ -6,12 +6,11 @@
 #include <iostream>
 
 #include "framework.h"
-#include "SurfaceModelerMain.h"
-#include "ThreadedRenderer.h"
-#include "BoxSurface.h"
-#include "Scene.h"
-#include "SampleScenes.h"
-#include "SceneReader.h"
+#include "SurfaceModeler/ThreadedRenderer.h"
+#include "SurfaceModeler/BoxSurface.h"
+#include "SurfaceModeler/Scene.h"
+#include "SurfaceModeler/SampleScenes.h"
+#include "SurfaceModeler/SceneReader.h"
 
 using namespace SurfaceModeler;
 
